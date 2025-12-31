@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "29227251298",
+    "project_id": "device-streaming-69cd5179",
+    "storage_bucket": "device-streaming-69cd5179.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29227251298:android:5751ffb6e45f07c53dc33b",
+        "android_client_info": {
+          "package_name": "com.example.geminichatapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw6Erfrq3H6mmndws_GwpfOytSMGqhbCs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
