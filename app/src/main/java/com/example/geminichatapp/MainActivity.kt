@@ -68,11 +68,20 @@ fun ChatScreen() {
                         val query = input
                         input = ""
                         isLoading = true
+
                         scope.launch {
-                            val response = GeminiHelper.generateResponse(query)
-                            messages.add(Message(response, false))
+                            var fullResponse = ""
+                            GeminiHelper.generateResponseStream(query).collect { chunk ->
+                                fullResponse += chunk
+                                // Replace or update the last bot message
+                                if (messages.lastOrNull()?.isUser == false) {
+                                    messages[messages.lastIndex] = Message(fullResponse, false)
+                                } else {
+                                    messages.add(Message(fullResponse, false))
+                                }
+                                listState.animateScrollToItem(messages.size - 1)
+                            }
                             isLoading = false
-                            listState.animateScrollToItem(messages.size - 1)
                         }
                     }
                 },
